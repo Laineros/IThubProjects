@@ -1,0 +1,10 @@
+START
+INPUT number
+WHILE (true) {
+IF x%5==0
+    PRINT число кратно 5
+    EXIT
+ELSE
+    x+=1
+}
+END

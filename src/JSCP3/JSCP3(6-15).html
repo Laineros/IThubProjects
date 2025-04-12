@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи JavaScript</title>
+</head>
+<body>
+<h1>Задачи JavaScript</h1>
+
+<h2>Задача 1: Проверка делимости на 7</h2>
+<button id="checkElemButton">Проверить на делимость</button>
+
+<h2>Задача 2: Изменение массива</h2>
+<button id="changeElemButton">Изменить массив</button>
+
+<h2>Задача 3: Сумма элементов массива</h2>
+<button id="sumElemsButton">Посчитать сумму</button>
+
+<h2>Задача 4: Переворот массива</h2>
+<button id="reverseIndexButton">Перевернуть массив</button>
+
+<h2>Задача 5: Проверка с колбэком</h2>
+<button id="checkElemCallbackButton">Проверить с колбэком</button>
+
+<h2>Задача 6: Изменение текста на странице</h2>
+<button id="changeTextButton">Изменить текст</button>
+<p id="textElement">Исходный текст</p>
+
+<h2>Задача 7: Показ/скрытие элемента</h2>
+<button id="toggleButton">Показать/Скрыть элемент</button>
+<div id="hiddenElement">Этот элемент можно скрывать и показывать.</div>
+
+<h2>Задача 8: Валидация формы</h2>
+<form id="myForm">
+    <input type="text" id="inputField" placeholder="Введите что-то" required>
+    <button type="submit">Отправить</button>
+</form>
+<p id="errorMessage"></p>
+
+<h2>Задача 9: Добавление нового элемента в список</h2>
+<button id="addButton">Добавить элемент</button>
+<ul id="myList">
+    <li>Первый элемент</li>
+</ul>
+
+<h2>Задача 10: Изменение цвета фона</h2>
+<button id="changeColorButton">Изменить цвет фона</button>
+
+<h2>Задача 11: Счётчик кликов</h2>
+<button id="clickButton">Нажми меня</button>
+<p>Количество кликов: <span id="clickCount">0</span></p>
+
+<h2>Задача 13: Таймер обратного отсчёта</h2>
+<p>Оставшееся время: <span id="timer">10</span> секунд</p>
+
+<h2>Задача 14: Фильтрация списка</h2>
+<input type="text" id="filterInput" placeholder="Фильтровать список">
+<ul id="filterList">
+    <li>Стакан</li>
+    <li>Джаз</li>
+    <li>Программирование</li>
+    <li>JavaScript</li>
+    <li>Java</li>
+</ul>
+
+<h2>Задача 15: Сохранение данных в localStorage</h2>
+<form id="saveForm">
+    <input type="text" id="dataInput" placeholder="Введите данные">
+    <button type="submit">Сохранить</button>
+</form>
+
+<script>
+
+    // Задача 1: Проверка делимости на 7
+    function checkElem(num) {
+        console.log(num % 7 === 0);
+    }
+
+    document.getElementById("checkElemButton").addEventListener("click", function () {
+        checkElem(13);
+    });
+
+    // Задача 2: Изменение массива
+    function changeElem(array, n) {
+        return array.map(function (element) {
+            return element * n;
+        });
+    }
+
+    document.getElementById("changeElemButton").addEventListener("click", function () {
+        let array = [1, 2, 3, 4];
+        let result = changeElem(array, 3);
+        console.log(result);
+    });
+
+    // Задача 3: Сумма элементов массива
+    function sumElems(array) {
+        return array.reduce(function (sum, element) {
+            let num = Number(element);
+            return isNaN(num) ? sum : sum + num;
+        }, 0);
+    }
+
+    document.getElementById("sumElemsButton").addEventListener("click", function () {
+        let array = ['10', 'Строка', '5g', '15', '05'];
+        let result = sumElems(array);
+        console.log(result);
+    });
+
+    // Задача 4: Переворот массива
+    function reverseIndex(array) {
+        let reversed = [];
+        for (let i = array.length - 1; i >= 0; i--) {
+            reversed.push(array[i]);
+        }
+        console.log(reversed);
+    }
+
+    document.getElementById("reverseIndexButton").addEventListener("click", function () {
+        let array = [1, 2, 3, 4, 5];
+        reverseIndex(array);
+    });
+
+    // Задача 5: Проверка с колбэком
+    function checkElemCallback(array, callback) {
+        return array.some(callback);
+    }
+
+    document.getElementById("checkElemCallbackButton").addEventListener("click", function () {
+        let array = [1, 2, 4];
+        let result = checkElemCallback(array, function (elem) {
+            return elem == 3;
+        });
+        console.log(result);
+    });
+    // Задача 6: Изменение текста
+    document.getElementById("changeTextButton").addEventListener("click", function () {
+        document.getElementById("textElement").innerText = "Текст изменен!";
+    });
+
+    // Задача 7: Показ/скрытие элемента
+    document.getElementById("toggleButton").addEventListener("click", function () {
+        let element = document.getElementById("hiddenElement");
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    });
+
+    // Задача 8: Валидация формы
+    document.getElementById("myForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let inputField = document.getElementById("inputField");
+        let errorMessage = document.getElementById("errorMessage");
+
+        if (inputField.value === "") {
+            errorMessage.innerText = "Поле не может быть пустым!";
+        } else {
+            errorMessage.innerText = "";
+            alert("Форма отправлена!");
+        }
+    });
+
+    // Задача 9: Добавление нового элемента в список
+    document.getElementById("addButton").addEventListener("click", function () {
+        let newItem = document.createElement("li");
+        newItem.textContent = "Новый элемент";
+        document.getElementById("myList").appendChild(newItem);
+    });
+
+    // Задача 10: Изменение цвета фона
+    document.getElementById("changeColorButton").addEventListener("click", function () {
+        let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        document.body.style.backgroundColor = randomColor;
+    });
+
+    // Задача 11: Счётчик кликов
+    let count = 0;
+    document.getElementById("clickButton").addEventListener("click", function () {
+        count++;
+        document.getElementById("clickCount").innerText = count;
+    });
+
+    // Задача 13: Таймер обратного отсчёта
+    let countdown = 10;
+    let timerElement = document.getElementById("timer");
+
+    let interval = setInterval(function () {
+        countdown--;
+        timerElement.innerText = countdown;
+        if (countdown <= 0) {
+            clearInterval(interval);
+            alert("Время вышло!");
+        }
+    }, 1000);
+
+    // Задача 14: Фильтрация списка
+    document.getElementById("filterInput").addEventListener("input", function () {
+        let filterText = this.value.toLowerCase();
+        let listItems = document.querySelectorAll("#filterList li");
+
+        listItems.forEach(function (item) {
+            if (item.textContent.toLowerCase().includes(filterText)) {
+                item.style.display = "list-item";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    });
+
+    // Задача 15: Сохранение данных в localStorage
+    document.getElementById("saveForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let data = document.getElementById("dataInput").value;
+        localStorage.setItem("savedData", data);
+        alert("Данные сохранены!");
+    });
+
+    window.addEventListener("load", function () {
+        let savedData = localStorage.getItem("savedData");
+        if (savedData) {
+            document.getElementById("dataInput").value = savedData;
+        }
+    });
+</script>
+
+</body>
+</html>
