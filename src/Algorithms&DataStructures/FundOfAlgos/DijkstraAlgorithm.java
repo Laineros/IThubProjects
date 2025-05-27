@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 import java.util.*;
 
 public class DijkstraAlgorithm {

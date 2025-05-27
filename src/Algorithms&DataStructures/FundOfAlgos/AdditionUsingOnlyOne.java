@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 public class AdditionUsingOnlyOne {
     public static int add(int a, int b) {
         while (b > 0) {

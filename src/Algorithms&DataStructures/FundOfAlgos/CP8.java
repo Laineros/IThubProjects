@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 public class CP8 {
     public static void main(String[] args) {
         /*System.out.println("Восьмое число в последовательности равно "+

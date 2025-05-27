@@ -16,17 +16,9 @@ public class EachOfUsHasAComputer {
             roomComputers[i] = sc.nextInt();
         }
 
-        List<int[]> sortedGroups = new ArrayList<>();
-        for (int i = 0; i < N; i++) {
-            sortedGroups.add(new int[]{groupSizes[i], i});
-        }
-        sortedGroups.sort(Comparator.comparingInt(a -> a[0]));
+        List<int[]> sortedGroups = sort(N, groupSizes);
 
-        List<int[]> sortedRooms = new ArrayList<>();
-        for (int i = 0; i < M; i++) {
-            sortedRooms.add(new int[]{roomComputers[i], i});
-        }
-        sortedRooms.sort(Comparator.comparingInt(a -> a[0]));
+        List<int[]> sortedRooms = sort(M, roomComputers);
 
         int[] result = new int[N];
         Arrays.fill(result, 0);
@@ -52,5 +44,14 @@ public class EachOfUsHasAComputer {
 
         System.out.println(groupCount);
         System.out.println(Arrays.toString(result).replaceAll("[\\[\\],]", ""));
+    }
+
+    private static List<int[]> sort(int n, int[] groupSizes) {
+        List<int[]> sortedGroups = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            sortedGroups.add(new int[]{groupSizes[i], i});
+        }
+        sortedGroups.sort(Comparator.comparingInt(a -> a[0]));
+        return sortedGroups;
     }
 }

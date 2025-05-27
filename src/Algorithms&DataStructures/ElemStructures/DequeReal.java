@@ -1,3 +1,5 @@
+package ElemStructures;
+
 // Класс узла двусвязного списка
 class Node {
     String value;
@@ -66,7 +68,7 @@ public class DequeReal {
     }
     public void checkOnIllegalStateException() throws IllegalStateException {
         if (isEmpty()) {
-            throw new IllegalStateException("DequeReal is empty.");
+            throw new IllegalStateException("ElemAlgos.DequeReal is empty.");
         }
     }
     public String removeLast() {
@@ -84,14 +86,14 @@ public class DequeReal {
 
     public String peekFirst() {
         if (isEmpty()) {
-            throw new IllegalStateException("DequeReal is empty.");
+            throw new IllegalStateException("ElemAlgos.DequeReal is empty.");
         }
         return front.value;
     }
 
     public String peekLast() {
         if (isEmpty()) {
-            throw new IllegalStateException("DequeReal is empty.");
+            throw new IllegalStateException("ElemAlgos.DequeReal is empty.");
         }
         return rear.value;
     }
@@ -156,7 +158,7 @@ class ClientDeque {
 
     public Client removeFirst() {
         if (isEmpty()) {
-            throw new IllegalStateException("DequeReal is empty.");
+            throw new IllegalStateException("ElemAlgos.DequeReal is empty.");
         }
         Client client = front.client;
         if (front == rear) {
@@ -179,14 +181,14 @@ class ClientDeque {
 
     public Client peekFirst() {
         if (isEmpty()) {
-            throw new IllegalStateException("DequeReal is empty.");
+            throw new IllegalStateException("ElemAlgos.DequeReal is empty.");
         }
         return front.client;
     }
 
     public Client peekLast() {
         if (isEmpty()) {
-            throw new IllegalStateException("DequeReal is empty.");
+            throw new IllegalStateException("ElemAlgos.DequeReal is empty.");
         }
         return rear.client;
     }

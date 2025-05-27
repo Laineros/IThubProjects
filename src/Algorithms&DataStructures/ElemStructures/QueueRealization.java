@@ -1,3 +1,5 @@
+package ElemStructures;
+
 class QueueRealization {
     public static void main(String[] args) {
         queueEx1();

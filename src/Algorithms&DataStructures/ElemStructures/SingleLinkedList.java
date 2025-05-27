@@ -1,3 +1,5 @@
+package ElemStructures;
+
 public class SingleLinkedList {
 
     Node head;

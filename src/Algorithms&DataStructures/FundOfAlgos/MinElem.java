@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 public class MinElem {
     public static int findMinElement(int[] arr, int left, int right) {
         // Если массив содержит только один элемент

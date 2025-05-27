@@ -1,3 +1,5 @@
+package ElemStructures;
+
 public class RecursiveFunction {
     public static int F(int n) {
         if (n == 1 || n == 2) {

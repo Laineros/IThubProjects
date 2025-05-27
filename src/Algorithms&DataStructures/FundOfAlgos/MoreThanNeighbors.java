@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 import java.util.Scanner;
 
 public class MoreThanNeighbors {

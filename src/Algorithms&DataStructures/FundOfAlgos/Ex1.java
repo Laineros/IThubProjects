@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 import java.io.*;
 import java.util.Arrays;
 

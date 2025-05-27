@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 import java.sql.Time;
 import java.util.*;
 

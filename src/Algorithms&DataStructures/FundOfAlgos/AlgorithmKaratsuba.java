@@ -1,3 +1,5 @@
+package FundOfAlgos;
+
 public class AlgorithmKaratsuba {
     public static void main(String[] args) {
         System.out.println(Karatsuba(364, 25));
